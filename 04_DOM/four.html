@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="langauge">
+        <li>javascript</li>
+    </ul>
+    <script>
+        function addLangauge(langauge){
+            const li=document.createElement("li");
+            li.innerHTML=`${langauge}`;
+            document.querySelector(".langauge").appendChild(li);
+        }
+        addLangauge("python");
+        addLangauge("java")
+
+        // optimized approach
+        function addLang(langauge){
+            const li=document.createElement("li");
+            li.appendChild(document.createTextNode(langauge));
+            document.querySelector('.langauge').appendChild(li);
+        }
+        addLang("golang");
+        addLang("css");
+
+        // Edit
+        const secondLang=document.querySelector("li:nth-child(2)");
+        // console.log(secondLang);
+        const newLi=document.createElement("li");
+        newLi.textContent="Python version 3.0.0"
+        secondLang.replaceWith(newLi);
+
+        const thirdLang=document.querySelector("li:nth-child(3)");
+        const newThirdLi=document.createElement("li");
+        newThirdLi.textContent="java jdk 17";
+        thirdLang.replaceWith(newThirdLi);
+
+        // edit
+        const firstLang=document.querySelector("li:first-child")
+        firstLang.outerHTML="<li>Ecma script</li>";
+
+        // remove
+         const lastLang=document.querySelector("li:last-child");
+         lastLang.remove();
+    </script>
+</body>
+</html>
