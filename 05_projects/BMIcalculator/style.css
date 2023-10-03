@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&display=swap');
+:root{
+    --p-font:'Poppins', sans-serif;
+    --p-arsans:'AR One Sans', sans-serif;
+    --p-badoni:'Bodoni Moda', serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--p-font);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+   text-align: center;
+}
+.form input[type="text"]{
+    width: 300px;
+    height: 28px;
+    border-radius: 15px;
+    outline: nonde;
+    border: 1px solid;
+    padding: 10px;
+}
+.form input[type="text"]:nth-child(1){
+    margin-bottom: 10px;
+}
+.form input[type="submit"]{
+    margin-top: 10px;
+    width: 250px;
+    height: 37px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: brown;
+    color: #fff;
+    font-family: var(--p-arsans);
+    font-size: 1.2rem;
+    transition: all 0.3s ease-out;
+}
+.form input[type="submit"]:hover{
+    background-color: violet;
+}
+.results{
+    color: red;
+}
