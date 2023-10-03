@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in the JS</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .container .images{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            height: 100vh;
+            width: 70%;
+            flex-wrap: wrap;
+        }
+        .container ul li{
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            list-style: none;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 24px;
+            border-radius: 20px;
+        }
+        .container ul li:nth-child(1){
+            background-color: brown;
+        }
+        .container ul li:nth-child(2){
+            background-color: yellowgreen;
+        }
+        .container ul li:nth-child(3){
+            background-color: red;
+        }
+        .container ul li:nth-child(4){
+            background-color: violet;
+        }
+        .container ul li:nth-child(5){
+            background-color: blueviolet;
+        }
+        .container ul li:nth-child(6){
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Amazing Image</h2>
+        <ul class="images">
+            <li id="japan"><span>Japan</span></li>
+            <li id="china"><span>China</span></li>
+            <li id="usa"><span>USA</span></li>
+            <li id="germany"><span>Germany</span></li>
+            <li id="india"><span>India</span></li>
+            <li id="australia"><span>Australia</span></li>
+        </ul>
+        <a id="google" href="https://www.google.com">Google here....</a>
+    </div>
+</body>
+<script>
+    //  document.getElementById("japan").onclick=function(){
+    //     alert("Your are in the Japan")
+    //  }
+
+    // document.getElementById("japan").addEventListener('click',function(){
+    //     alert("Your in the Japan");
+    // });
+
+    // there are three parameters required in the method addEventListener first will take the 
+    // event name second will take the callback function and third will take the true false means 
+    // event propagation ==> when we click on the ul and li there we have the different tasks
+    // if we provide it as false then event will bubbles up and if we provide it as true then that is capturing mode
+    //bubbles up means firstly it will execute the li event and then ul ==> by default or by making false
+    //captuing mode firstly execute ul event and then li ==> have to declare manually 
+
+
+    // document.getElementById("japan").addEventListener('click',function(){
+    //      console.log("Clicked in japan");
+    // },true);
+
+    // document.querySelector('.images').addEventListener('click',function(){
+    //     console.log("Clicked in the list");
+    // },true);
+    
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //   e.preventDefault();
+    //   console.log("google clicked");
+    // },false)
+
+
+    document.querySelector('.images').addEventListener('click',function(e){
+       console.log(e.target);
+    //    console.log(e.target.firstChild.tagName);
+    if(e.target.id==='china'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+
+    if(e.target.id==='japan'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+    if(e.target.id==='india'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+    if(e.target.id==='usa'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+    if(e.target.id==='germany'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+
+    if(e.target.id==='australia'){
+        const removeIt=e.target;
+        removeIt.remove();
+    }
+
+    });
+    
+</script>
+</html>
