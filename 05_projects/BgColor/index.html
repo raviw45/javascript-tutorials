@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event background changer</title>
+    <style>
+       body{
+        margin: 0;
+        padding: 0;
+        background-color: #222;
+        color: #fff;
+       }
+       .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+       }
+       button{
+        width: 150px;
+        padding: 16px;
+        border-radius: 25px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Color Changer</h2>
+        <div class="btn">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+</body>
+<script>
+       const randomColor=function random(){
+           const hex="0123456789ABCDEF";
+           let color='#';
+           for(let i=0;i<6;i++){
+              color +=hex[(Math.floor(Math.random() * 16))];
+           }
+           return color;
+       }
+       const startChangingColor=function(){
+            document.body.style.backgroundColor=randomColor();
+        };
+
+        
+        let interval;
+      
+       const stopChangingInterval=function(){
+            clearInterval(interval);
+        }
+
+        document.querySelector('#start').addEventListener('click',function(){
+            console.log("started");
+         interval= setInterval(startChangingColor,2000)
+        })
+
+        document.querySelector('#stop').addEventListener('click',function(){
+             console.log("stopped");
+             stopChangingInterval()
+        })
+</script>
+</html>

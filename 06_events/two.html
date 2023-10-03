@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Learn code with techsoft</h2>
+        <button id="btn">start</button>
+        <button id="stop">stop</button>
+    </div>
+</body>
+<script>
+    let interval;
+    document.getElementById('btn').addEventListener('click',function(){
+        setTimeout(() => {
+        console.log('timeout clicked');
+    
+    }, 2000);
+
+    interval=setInterval(function(){
+        console.log('interval clicked');
+    },1000);
+    },false);
+
+    document.getElementById('stop').addEventListener('click',function(){
+        clearInterval(interval);
+    })
+</script>
+</html>
