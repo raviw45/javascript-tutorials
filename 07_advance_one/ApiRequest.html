@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api requests</title>
+</head>
+<body style="background-color: #333;color:#fff;">
+    <h2>Api request sender xhr</h2>
+    <div id="img">
+
+    </div>
+</body>
+<script>
+   const requestURL="https://api.github.com/users/hiteshchoudhary";
+   const xhr=new XMLHttpRequest();
+   xhr.open('GET',requestURL);
+   xhr.onreadystatechange=function(){
+      console.log(xhr.readyState);
+      if(xhr.readyState==4){
+         const data=JSON.parse(this.responseText);
+         console.log(typeof data);
+         //get the image from the api and show to the document folder
+         const img=document.createElement("img");
+         img.setAttribute('src',data.avatar_url);
+         const imgparent=document.getElementById("img");
+         imgparent.appendChild(img);
+         console.log(data.followers);
+      }
+   }
+   xhr.send();
+</script>
+</html>
