@@ -1,0 +1,24 @@
+[
+{
+    "id":"1001",
+    "name":"Ravikant",
+    "email":"ravicoder45@gmail.com",
+    "salary":"23450",
+    "city":"Delhi"
+ },
+ {
+    "id":"1002",
+    "name":"Aniket",
+    "email":"aniket17@gmail.com",
+    "salary":"62982.00",
+    "city":"Pune"
+ },
+ {
+    "id":"1003",
+    "name":"Amit",
+    "email":"amit34@gmail.com",
+    "salary":"45000",
+    "city":"Bangalore"
+ }
+
+]
