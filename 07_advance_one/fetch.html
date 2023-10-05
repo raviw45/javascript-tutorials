@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+      
+</body>
+<script>
+      obj={
+                name:"Amankumar",
+                username:"87",
+                email:"ravi@gmail.com"
+          }
+       fetch("https://jsonplaceholder.typicode.com/users",{
+         method:'POST',
+         body:JSON.stringify(obj),
+         headers:{
+            Accept:"application.json",
+            "Content-type":"application/json"
+         },
+       }).then((res)=>{
+        if(!res.ok){
+           throw Error(res.statusText);
+        }
+        return res.json();
+       })
+       .then((data)=>console.log(data)).catch((err)=>console.log(err));
+
+
+       fetch("https://jsonplaceholder.typicode.com/users")
+       .then((res)=>res.json())
+       .then((data)=>{
+           console.log(data);
+       })
+       .catch((err)=>console.log(err))
+</script>
+</html>
