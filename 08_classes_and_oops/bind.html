@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class User{
+        constructor(){
+            this.username="React";
+            this.server="https://localhost:3000";
+            //requirements
+            //to access the properties of the class use bind method and pass the reference 
+            //so that we can access the properties inside the method
+            document.querySelector('button')
+            .addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log("Button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app=new User();
+</script>
+</html>
